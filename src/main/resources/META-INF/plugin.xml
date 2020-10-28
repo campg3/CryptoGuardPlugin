@@ -1,0 +1,25 @@
+<idea-plugin>
+    <id>org.cs4264.CryptoGuardPlugin</id>
+    <name>CryptoGuard</name>
+    <vendor email="campg3@vt.edu" url="">VTStudents</vendor>
+
+    <description><![CDATA[
+    Plugin to enable the easy use of CryptoGuard
+    ]]></description>
+
+    <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <actions>
+        <!-- Add your actions here -->
+        <group id="CryptoGuard.RunCode" text="CryptoGuard" description="Plugin to enable easy CryptoGuard usage" popup="true">
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+            <action class="cryptoguard.plugin.RunAction" id="CryptoGuard.Actions.Run" text="Hey"/>
+        </group>
+    </actions>
+</idea-plugin>
