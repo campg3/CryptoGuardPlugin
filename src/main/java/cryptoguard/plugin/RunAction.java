@@ -9,6 +9,6 @@ public class RunAction extends AnAction {
 
     @Override
     public void actionPerformed(@NotNull AnActionEvent e) {
-        Messages.showMessageDialog(e.getProject(), "Heyo", "MyIdeaDemo", Messages.getInformationIcon());
+        Messages.showMessageDialog(e.getProject(), "CryptoGuard has been ran on your code, see temp.txt for output", "CryptoGuard", Messages.getInformationIcon());
     }
 }

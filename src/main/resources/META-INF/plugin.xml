@@ -19,7 +19,7 @@
         <!-- Add your actions here -->
         <group id="CryptoGuard.RunCode" text="CryptoGuard" description="Plugin to enable easy CryptoGuard usage" popup="true">
             <add-to-group group-id="ToolsMenu" anchor="last"/>
-            <action class="cryptoguard.plugin.RunAction" id="CryptoGuard.Actions.Run" text="Hey"/>
+            <action class="cryptoguard.plugin.RunAction" id="CryptoGuard.Actions.Run" text="Run CryptoGuard"/>
         </group>
     </actions>
 </idea-plugin>
