@@ -8,9 +8,13 @@ version '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
+    flatDir {
+        dirs 'libs'
+    }
 }
 
 dependencies {
+    compile files('libs/cryptoguard.jar')
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
 
