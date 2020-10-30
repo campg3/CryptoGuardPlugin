@@ -10,7 +10,7 @@ package cryptoguard.source;
  */
 public class Utils {
     /** Constant <code>group="gradleguard"</code> */
-    public static final String group = "gradleguard";
+    public static final String group = "cryptoguard";
     /** Constant <code>projectVersion="V00.01.01"</code> */
     public static final String projectVersion = "V00.01.01";
     /** Constant <code>cmdSplit="repeat(80, =) + \n"</code> */

@@ -6,35 +6,28 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.wm.WindowManager;
-import org.apache.commons.io.FileUtils;
+import cryptoguard.source.Base;
+import frontEnd.Interface.outputRouting.ExceptionHandler;
 import org.jetbrains.annotations.NotNull;
 
 import java.awt.*;
-import java.nio.file.Path;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 import java.io.File;
-import java.io.FilenameFilter;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class RunAction extends AnAction {
     private static List<File> listFiles = new ArrayList<>();
 
-    public static void listOfFiles(File dirPath) {
+    public static void listOfFiles(File dirPath, String extension) {
         File filesList[] = dirPath.listFiles();
         for (File file : filesList) {
             if (file.isFile() ) {
-                if (file.toString().endsWith(".class")) {
+                if (file.toString().endsWith(extension)) {
                     listFiles.add(file);
                 }
             }
             else {
-                listOfFiles(file);
+                listOfFiles(file, extension);
             }
         }
     }
@@ -50,13 +43,29 @@ public class RunAction extends AnAction {
             }
         }
 
-        listOfFiles(new File(activeProject.getBasePath()));
-        List<String> sourceFiles = new ArrayList<>();
+        listOfFiles(new File(activeProject.getBasePath()), ".class");
+        ArrayList<String> sourceFiles = new ArrayList<>();
         for (File f : listFiles) {
             sourceFiles.add(f.toString());
         }
+        listFiles.clear();
 
-        Messages.showMessageDialog(e.getProject(), "CryptoGuard has been ran on your code, see temp.txt for output", "CryptoGuard", Messages.getInformationIcon());
-        //Messages.showMessageDialog(e.getProject(), result, "CryptoGuard", Messages.getInformationIcon());
+        listOfFiles(new File(activeProject.getBasePath()), ".jar");
+        ArrayList<String> depFiles = new ArrayList<>();
+        String test = "";
+        for (File f : listFiles) {
+            depFiles.add(f.toString());
+            test = test + f.getName() + " ";
+        }
+        listFiles.clear();
+
+        File outputFile = new File(activeProject.getBasePath(), "tmp/_cryptoguard.json");
+        try {
+            //String fileOut = Base.entryPoint(sourceFiles, depFiles, outputFile.getAbsolutePath(), null, 2);
+        } catch (ExceptionHandler exceptionHandler) {
+            exceptionHandler.printStackTrace();
+        }
+        //Messages.showMessageDialog(e.getProject(), "CryptoGuard has been ran on your code, see temp.txt for output", "CryptoGuard", Messages.getInformationIcon());
+        Messages.showMessageDialog(e.getProject(), outputFile.getAbsolutePath(), "CryptoGuard", Messages.getInformationIcon());
     }
 }
