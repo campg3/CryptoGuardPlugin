@@ -11,6 +11,7 @@ import frontEnd.Interface.outputRouting.ExceptionHandler;
 import org.jetbrains.annotations.NotNull;
 
 import java.awt.*;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.io.File;
@@ -60,8 +61,15 @@ public class RunAction extends AnAction {
         listFiles.clear();
 
         File outputFile = new File(activeProject.getBasePath(), "tmp/_cryptoguard.json");
+        if (!outputFile.getParentFile().exists()){
+            outputFile.getParentFile().mkdirs();
+        }
+        else {
+            outputFile.delete();
+
+        }
         try {
-            //String fileOut = Base.entryPoint(sourceFiles, depFiles, outputFile.getAbsolutePath(), null, 2);
+            String fileOut = Base.entryPoint(sourceFiles, depFiles, outputFile.getAbsolutePath(), null, 2);
         } catch (ExceptionHandler exceptionHandler) {
             exceptionHandler.printStackTrace();
         }
