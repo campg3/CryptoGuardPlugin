@@ -46,7 +46,7 @@ public class Base {
         if (debuggingLevel > 0)
             System.out.println(Utils.cmdSplit);
 
-        String fileResult = EntryPoint_Plugin.main(sources, dependencies, fileOut, mainFile, errorAddition, bugSummaryHandler, heuristicsHandler, debuggingLevel);
+        String fileResult = EntryPoint_Plugin.main(sources, dependencies, fileOut, mainFile, errorAddition, bugSummaryHandler, heuristicsHandler, debuggingLevel, new ArrayList<>());
         System.out.println("Output file can be found at " + fileResult);
 
         if (debuggingLevel > 0)

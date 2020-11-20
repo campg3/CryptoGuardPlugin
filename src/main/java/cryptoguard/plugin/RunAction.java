@@ -81,8 +81,9 @@ public class RunAction extends AnAction {
             System.out.println("ERROR OCCURED");
             exceptionHandler.printStackTrace();
         }
+
         // show the output that points to the file
         //Messages.showMessageDialog(e.getProject(), "CryptoGuard has been ran on your code, see temp.txt for output", "CryptoGuard", Messages.getInformationIcon());
-        Messages.showMessageDialog(e.getProject(), "CyrptoGuard has been executed on your code. See the output here: \n" + outputFile.getAbsolutePath(), "CryptoGuard", Messages.getInformationIcon());
+        Messages.showMessageDialog(e.getProject(), "CyrptoGuard has been executed on your code. See the output here: \n" + outputFile.getParent(), "CryptoGuard", Messages.getInformationIcon());
     }
 }
