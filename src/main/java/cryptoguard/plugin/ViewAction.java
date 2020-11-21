@@ -6,9 +6,12 @@ import com.intellij.openapi.fileChooser.FileChooser;
 import com.intellij.openapi.fileChooser.FileChooserDescriptor;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.vfs.VirtualFile;
+import frontEnd.Interface.outputRouting.ExceptionHandler;
+import frontEnd.MessagingSystem.routing.structure.Default.Report;
+import org.apache.commons.io.FileUtils;
 import org.jetbrains.annotations.NotNull;
 
-import java.io.File;
+import java.io.*;
 
 public class ViewAction extends AnAction {
 
@@ -27,7 +30,16 @@ public class ViewAction extends AnAction {
         fileChooser.setDescription("Choose a CryptoGuard output file to summarize");
 
         FileChooser.chooseFile(fileChooser, e.getProject(),null, (param) -> {
-            Messages.showMessageDialog(e.getProject(), param.getPath(), "Path", Messages.getInformationIcon());
+            //Messages.showMessageDialog(e.getProject(), param.getPath(), "Path", Messages.getInformationIcon());
+            File file = new File(param.getPath());
+            try {
+                Report r = Report.deserialize(new File(param.getPath()));
+                r.getIssues();
+                Messages.showMessageDialog(e.getProject(), Integer.toString(r.getIssues().size()), "Path", Messages.getInformationIcon());
+            } catch (ExceptionHandler exceptionHandler) {
+                exceptionHandler.printStackTrace();
+            }
+
         });
 
     }
