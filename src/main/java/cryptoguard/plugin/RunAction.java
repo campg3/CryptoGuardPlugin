@@ -66,24 +66,32 @@ public class RunAction extends AnAction {
         listFiles.clear();
 
         // create the outputFile
-        File outputFile = new File(activeProject.getBasePath(), "tmp/_cryptoguard.json");
-        if (!outputFile.getParentFile().exists()){
-            outputFile.getParentFile().mkdirs();
+        File outputFile = new File(activeProject.getBasePath(), "./tmp");
+        if (!outputFile.exists()){
+            outputFile.mkdirs();
         }
-        else {
-            outputFile.delete();
-
-        }
+        boolean correctlyRan = true;
         // call cryptoguard
         try {
-            String fileOut = Base.entryPoint(sourceFiles, depFiles, outputFile.getAbsolutePath(), null, 2);
+            String fileOut = Base.entryPoint(sourceFiles, depFiles, null, null, 2);
+            if (fileOut == null) {
+                File list[] = (new File(activeProject.getBasePath())).listFiles();
+                for (File f : list) {
+                    if (f.isFile() && f.getName().startsWith("_CryptoGuard")) {
+                        f.renameTo(new File ("tmp/" + f.getName()));
+                    }
+                }
+            }
         } catch (ExceptionHandler exceptionHandler) {
-            System.out.println("ERROR OCCURED");
+            Messages.showMessageDialog(e.getProject(), "ERROR", "CryptoGuard", Messages.getInformationIcon());
+            correctlyRan = false;
             exceptionHandler.printStackTrace();
         }
 
         // show the output that points to the file
         //Messages.showMessageDialog(e.getProject(), "CryptoGuard has been ran on your code, see temp.txt for output", "CryptoGuard", Messages.getInformationIcon());
-        Messages.showMessageDialog(e.getProject(), "CyrptoGuard has been executed on your code. See the output here: \n" + outputFile.getParent(), "CryptoGuard", Messages.getInformationIcon());
+        if (correctlyRan) {
+            Messages.showMessageDialog(e.getProject(), "CryptoGuard has been executed on your code. See the output file in the following directory: \n" + outputFile.getPath(), "CryptoGuard", Messages.getInformationIcon());
+        }
     }
 }

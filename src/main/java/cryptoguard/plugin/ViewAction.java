@@ -41,7 +41,7 @@ public class ViewAction extends AnAction {
             File file = new File(param.getPath());
             try {
                 Report r = Report.deserialize(new File(param.getPath()));
-                ViewActionUI.main(e.getProject().getName(), r.getIssues());
+                ViewActionUI.main(r.getProjectName(), r.getIssues());
             } catch (ExceptionHandler exceptionHandler) {
                 exceptionHandler.printStackTrace();
             }
