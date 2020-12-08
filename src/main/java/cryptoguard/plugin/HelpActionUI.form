@@ -142,20 +142,20 @@
             <constraints/>
             <properties>
               <model>
-                <item value="Found broken crypto schemes"/>
-                <item value="Found broken hash functions"/>
-                <item value="Used constant keys in code"/>
-                <item value="Used untrusted TrustManager"/>
-                <item value="Used export grade public Key"/>
-                <item value="Used untrusted HostNameVerifier"/>
-                <item value="Used HTTP Protocol"/>
-                <item value="Used &lt; 1000 iteration for PBE"/>
-                <item value="Found constant salts in code"/>
-                <item value="Found constant IV in code"/>
-                <item value="Found predictable seeds in code"/>
-                <item value="Should check HostnameVerification manually"/>
-                <item value="Used untrusted PRNG"/>
-                <item value="Used Predictable KeyStore Password"/>
+                <item value="1-Found broken crypto schemes"/>
+                <item value="2-Found broken hash functions"/>
+                <item value="3-Used constant keys in code"/>
+                <item value="4-Used untrusted TrustManager"/>
+                <item value="5-Used export grade public Key"/>
+                <item value="6-Used untrusted HostNameVerifier"/>
+                <item value="7-Used HTTP Protocol"/>
+                <item value="8-Used &lt; 1000 iteration for PBE"/>
+                <item value="9-Found constant salts in code"/>
+                <item value="10-Found constant IV in code"/>
+                <item value="11-Found predictable seeds in code"/>
+                <item value="12-Should check HostnameVerification manually"/>
+                <item value="13-Used untrusted PRNG"/>
+                <item value="14-Used Predictable KeyStore Password"/>
               </model>
               <toolTipText value="List of Error Descriptors corelating to error number"/>
               <valueIsAdjusting value="false"/>
