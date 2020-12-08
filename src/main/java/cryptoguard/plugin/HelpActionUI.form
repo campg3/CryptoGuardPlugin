@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="cryptoguard.plugin.HelpActionUI">
+  <grid id="cbd77" binding="contentPane" layout-manager="GridLayoutManager" row-count="9" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="10" left="10" bottom="10" right="10"/>
+    <constraints>
+      <xy x="48" y="54" width="357" height="529"/>
+    </constraints>
+    <properties/>
+    <border type="none"/>
+    <children>
+      <grid id="94766" binding="OKButtonArea" layout-manager="GridLayoutManager" row-count="1" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <hspacer id="98af6">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+          </hspacer>
+          <grid id="9538f" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="e7465" class="javax.swing.JButton" binding="buttonOK">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="OK"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+        </children>
+      </grid>
+      <component id="825e2" class="javax.swing.JLabel" binding="Title">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Getting Started"/>
+        </properties>
+      </component>
+      <scrollpane id="22651">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="cba33" class="javax.swing.JTextArea" binding="theCryptoGuardToolDiscoversTextArea" default-binding="true">
+            <constraints/>
+            <properties>
+              <lineWrap value="true"/>
+              <text value="The CryptoGuard tool discovers vulnerabilities and cryptographic misuse in Java and Android programs. The tools available are a run and view mechanism."/>
+              <wrapStyleWord value="true"/>
+            </properties>
+          </component>
+        </children>
+      </scrollpane>
+      <component id="2576e" class="javax.swing.JLabel" binding="View">
+        <constraints>
+          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="View"/>
+        </properties>
+      </component>
+      <component id="ef374" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Run"/>
+        </properties>
+      </component>
+      <scrollpane id="c1c3d">
+        <constraints>
+          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+        <border type="none" title=""/>
+        <children>
+          <component id="f4dbd" class="javax.swing.JTextArea" binding="theRunActionRevealsTextArea" default-binding="true">
+            <constraints/>
+            <properties>
+              <lineWrap value="true"/>
+              <text value="The run action runs CryptoGuard on the current Java program. After parsing for the correct file, it will create an output file containg the results from the analysis."/>
+              <wrapStyleWord value="true"/>
+            </properties>
+          </component>
+        </children>
+      </scrollpane>
+      <scrollpane id="2f55c">
+        <constraints>
+          <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <scrollpane id="cd8ba">
+            <constraints/>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="89d29" class="javax.swing.JTextArea" binding="ViewDescriptionTextArea">
+                <constraints/>
+                <properties>
+                  <lineWrap value="true"/>
+                  <text value="The view action displays the results of a CryptoGuard analysis. A file finder is revealed where a CryptoGuard generated output file must be selected. The vulnerabilities and errors found in this output are displayed on the screen. The project name associated with the file, the total errors, as well as error descritors and details are found on this page."/>
+                  <wrapStyleWord value="true"/>
+                </properties>
+              </component>
+            </children>
+          </scrollpane>
+        </children>
+      </scrollpane>
+      <component id="34112" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Error Descriptors"/>
+        </properties>
+      </component>
+      <scrollpane id="7314">
+        <constraints>
+          <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="139eb" class="javax.swing.JList" binding="list1" default-binding="true">
+            <constraints/>
+            <properties>
+              <model>
+                <item value="Found broken crypto schemes"/>
+                <item value="Found broken hash functions"/>
+                <item value="Used constant keys in code"/>
+                <item value="Used untrusted TrustManager"/>
+                <item value="Used export grade public Key"/>
+                <item value="Used untrusted HostNameVerifier"/>
+                <item value="Used HTTP Protocol"/>
+                <item value="Used &lt; 1000 iteration for PBE"/>
+                <item value="Found constant salts in code"/>
+                <item value="Found constant IV in code"/>
+                <item value="Found predictable seeds in code"/>
+                <item value="Should check HostnameVerification manually"/>
+                <item value="Used untrusted PRNG"/>
+                <item value="Used Predictable KeyStore Password"/>
+              </model>
+              <toolTipText value="List of Error Descriptors corelating to error number"/>
+              <valueIsAdjusting value="false"/>
+            </properties>
+          </component>
+        </children>
+      </scrollpane>
+    </children>
+  </grid>
+</form>
