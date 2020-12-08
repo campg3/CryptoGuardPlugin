@@ -29,6 +29,7 @@ public class HelpActionUI extends JDialog {
         textArea1.setFocusable(false);
         textArea1.setLineWrap(true);
         textArea1.setWrapStyleWord(true);*/
+        //textArea1.setCursor(null);
         setContentPane(contentPane);
         setModal(true);
         getRootPane().setDefaultButton(buttonOK);
@@ -60,7 +61,7 @@ public class HelpActionUI extends JDialog {
     public static void main(String[] args) {
         HelpActionUI dialog = new HelpActionUI();
         dialog.setTitle("Help for CryptoGuard Plugin");
-        dialog.setSize(200, 400);
+        dialog.setSize(400, 600);
         Toolkit toolkit = Toolkit.getDefaultToolkit();
         Dimension screenSize = toolkit.getScreenSize();
         int x = (screenSize.width - dialog.getWidth())/2;
@@ -68,7 +69,6 @@ public class HelpActionUI extends JDialog {
         dialog.setLocation(x, y);
         dialog.pack();
         dialog.setVisible(true);
-        System.exit(0);
     }
 
     private void createUIComponents() {

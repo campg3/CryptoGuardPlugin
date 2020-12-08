@@ -21,6 +21,7 @@
             <add-to-group group-id="ToolsMenu" anchor="last"/>
             <action class="cryptoguard.plugin.RunAction" id="CryptoGuard.Actions.Run" text="Analyze Code"/>
             <action class="cryptoguard.plugin.ViewAction" id="CryptoGuard.Actions.View" text="View Summary"/>
+            <action class="cryptoguard.plugin.HelpAction" id="CryptoGuard.Actions.Help" text="Help"/>
         </group>
     </actions>
 </idea-plugin>

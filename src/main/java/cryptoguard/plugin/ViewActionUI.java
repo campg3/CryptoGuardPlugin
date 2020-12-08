@@ -19,7 +19,22 @@ public class ViewActionUI extends JDialog {
     private JTextArea textArea1;
     private JTextArea textField1;
     private List<Issue> errorList;
-
+    
+    public void updateIDList(List<Issue> eList) {
+        for (Issue i : eList) {
+            if (i.getRuleNumber() == (int)typeList.getSelectedItem()) {
+                idList.addItem(i.getId());
+            }
+        }
+    }
+    public void updateTextField(List<Issue> eList) {
+        for (Issue i : eList) {
+            if (i.getId() == (String)idList.getSelectedItem()) {
+                textArea1.setText(i.getDescription());
+                textField1.setText(i.getSeverity());
+            }
+        }
+    }
 
     public ViewActionUI(String name, List<Issue> eList) {
         errorList = eList;
@@ -32,17 +47,8 @@ public class ViewActionUI extends JDialog {
                 typeList.addItem(i.getRuleNumber());
             }
         }
-        for (Issue i : eList) {
-            if (i.getRuleNumber() == (int)typeList.getSelectedItem()) {
-                idList.addItem(i.getId());
-            }
-        }
-        for (Issue i : eList) {
-            if (i.getId() == (String)idList.getSelectedItem()) {
-                textArea1.setText(i.getDescription());
-                textField1.setText(i.getSeverity());
-            }
-        }
+        updateIDList(eList);
+        updateTextField(eList);
         setContentPane(contentPane);
         setModal(true);
         getRootPane().setDefaultButton(buttonOK);
@@ -51,17 +57,8 @@ public class ViewActionUI extends JDialog {
             @Override
             public void actionPerformed(ActionEvent e) {
                 idList.removeAllItems();
-                for (Issue i : errorList) {
-                    if (i.getRuleNumber() == (int)typeList.getSelectedItem()) {
-                        idList.addItem(i.getId());
-                    }
-                }
-                for (Issue i : errorList) {
-                    if (i.getId() == (String)idList.getSelectedItem()) {
-                        textArea1.setText(i.getDescription());
-                        textField1.setText(i.getSeverity());
-                    }
-                }
+                updateIDList(errorList);
+                updateTextField(errorList);
                 rePack();
             }
         });
@@ -69,12 +66,7 @@ public class ViewActionUI extends JDialog {
         idList.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                for (Issue i : errorList) {
-                    if (i.getId() == (String)idList.getSelectedItem()) {
-                        textArea1.setText(i.getDescription());
-                        textField1.setText(i.getSeverity());
-                    }
-                }
+                updateTextField(errorList);
                 rePack();
             }
         });

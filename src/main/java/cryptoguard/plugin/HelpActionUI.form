@@ -59,6 +59,7 @@
           <component id="cba33" class="javax.swing.JTextArea" default-binding="true">
             <constraints/>
             <properties>
+              <editable value="false"/>
               <lineWrap value="true"/>
               <text value="The CryptoGuard tool discovers vulnerabilities and cryptographic misuse in Java and Android programs. The tools available are a run and view mechanism."/>
               <wrapStyleWord value="true"/>
@@ -92,6 +93,7 @@
           <component id="f4dbd" class="javax.swing.JTextArea" default-binding="true">
             <constraints/>
             <properties>
+              <editable value="false"/>
               <lineWrap value="true"/>
               <text value="The run action runs CryptoGuard on the current Java program. After parsing for the correct file, it will create an output file containg the results from the analysis."/>
               <wrapStyleWord value="true"/>
@@ -114,8 +116,9 @@
               <component id="89d29" class="javax.swing.JTextArea">
                 <constraints/>
                 <properties>
+                  <editable value="false"/>
                   <lineWrap value="true"/>
-                  <text value="The view action displays the results of a CryptoGuard analysis. A file finder is revealed where a CryptoGuard generated output file must be selected. The vulnerabilities and errors found in this output are displayed on the screen. The project name associated with the file, the total errors, as well as error descritors and details are found on this page."/>
+                  <text value="The view action displays the results of a CryptoGuard analysis. A file finder is revealed where a CryptoGuard generated output file must be selected. The vulnerabilities and errors found in this output are displayed on the screen. The project name associated with the file, the total errors, as well as error descriptors and details are found on this page."/>
                   <wrapStyleWord value="true"/>
                 </properties>
               </component>
