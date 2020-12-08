@@ -56,7 +56,7 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="cba33" class="javax.swing.JTextArea" binding="theCryptoGuardToolDiscoversTextArea" default-binding="true">
+          <component id="cba33" class="javax.swing.JTextArea" default-binding="true">
             <constraints/>
             <properties>
               <lineWrap value="true"/>
@@ -89,7 +89,7 @@
         <properties/>
         <border type="none" title=""/>
         <children>
-          <component id="f4dbd" class="javax.swing.JTextArea" binding="theRunActionRevealsTextArea" default-binding="true">
+          <component id="f4dbd" class="javax.swing.JTextArea" default-binding="true">
             <constraints/>
             <properties>
               <lineWrap value="true"/>
@@ -111,7 +111,7 @@
             <properties/>
             <border type="none"/>
             <children>
-              <component id="89d29" class="javax.swing.JTextArea" binding="ViewDescriptionTextArea">
+              <component id="89d29" class="javax.swing.JTextArea">
                 <constraints/>
                 <properties>
                   <lineWrap value="true"/>
